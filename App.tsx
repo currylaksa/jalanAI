@@ -1,20 +1,22 @@
+// App.tsx
+// Main app entry point.
+// Wraps the navigation container and sets up Firebase context if needed.
+
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Navigation from './navigation'; // Import the main navigator
+// import { initializeFirebase } from './utils/firebase'; // Potentially initialize Firebase here if needed early
+
+// --- TODO: Initialize Firebase or other global services here if required ---
+// initializeFirebase(); 
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <>
+      {/* Use the main Navigation component */}
+      <Navigation />
+      {/* Style the status bar (optional) */}
       <StatusBar style="auto" />
-    </View>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
