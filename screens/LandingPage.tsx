@@ -6,11 +6,13 @@ import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-nati
 // Remove LinearGradient import
 // import { LinearGradient } from 'expo-linear-gradient';
 // Consider adding an icon library later like: import Icon from 'react-native-vector-icons/MaterialIcons';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const LandingPage = ({ navigation }: any) => {
   return (
-    // Replace LinearGradient with a standard View
     <View style={styles.wrapper}>
+      <Navbar />
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.container}>
         {/* Hero Section */}
         {/* <Icon name="flight-takeoff" size={60} color="#FFF" style={styles.heroIcon} /> */}
@@ -49,6 +51,8 @@ const LandingPage = ({ navigation }: any) => {
           <Text style={styles.featureText}>✅ <Text style={styles.bold}>One-Stop Booking:</Text> Seamlessly book everything you need.</Text>
         </View>
 
+        {/* Footer should be inside the ScrollView so it appears at the bottom when scrolled */}
+        <Footer />
       </ScrollView>
     </View>
   );
